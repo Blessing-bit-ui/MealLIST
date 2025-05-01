@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function Mealist(){
+const Mealist=()=>{
     const todayMeals=[
         {name:"Baked Beans", calories:"200" },
         {name:"Grilled Veggies", calories:"80"},
@@ -21,20 +21,20 @@ const toggleStatus=(index)=>{
     setStatus(newStatus);
 }
 return (
-  <>
-    {meals.map((meal, index) => (
-      <div key={index}>
-        <h1>
-          {meal.name}
-          </h1>
-          <p>
-          {meal.calories} calories
-        </p>
-        <button onClick={() => toggleStatus(index)}>{status[index]} </button>
-      </div>
-    ))}
-    <p> Meal remaining={count}</p>
-  </>
+  <div className="meallist">
+    <div className="list-container">
+      {meals.map((meal, index) => (
+        <div key={index}>
+          <h2>{meal.name}</h2>
+          <p>{meal.calories} calories</p>
+          <button onClick={() => toggleStatus(index)}>{status[index]} </button>
+        </div>
+      ))}
+    </div>
+    <div className="Meal">
+    <p> Meal remaining: {count}</p>
+    </div>
+  </div>
 );
 }
 export default Mealist;

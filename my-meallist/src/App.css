@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+.meallist{
+  max-width: 90%;
+  width:200px;
+  border:2px solid gray;
+  border-radius:20px;
+  background-color:gray;
+  margin:50px auto;
+  padding:5px;
+  box-sizing:border-box;
+  box-shadow:3px 4px 8px rgba(5,0,2,0.2)
+
+}
+.Meal{
+  background-color:white;
+  border-radius: 10px;
+  padding:15px;
+  margin-top:10px;
+  width:200px auto;
+}
