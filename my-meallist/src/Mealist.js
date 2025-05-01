@@ -7,12 +7,12 @@ function Mealist(){
         {name:"Soup", calories:"100"}
     ]
     const [meals, setMeals]=useState(todayMeals);
-const [status, setStatus]=useState(Array(todayMeals.length).fill("Eat"));
+const [status, setStatus]=useState(["Eat","Eat", "Eat"]);
 const[count, setCount]=useState(todayMeals.length);
 const toggleStatus=(index)=>{
     const newStatus=[...status]
     if(newStatus[index]==="Eat"){
-        newStatus[index]="Eaten";
+        newStatus[index]="Eaten!";
         setCount(count-1)
     }else{
         newStatus[index] ="Eat"
@@ -26,8 +26,10 @@ return (
       <div key={index}>
         <h1>
           {meal.name}
-          {meal.calories}
-        </h1>
+          </h1>
+          <p>
+          {meal.calories} calories
+        </p>
         <button onClick={() => toggleStatus(index)}>{status[index]} </button>
       </div>
     ))}
